@@ -1,0 +1,114 @@
+.App {
+  text-align: center;
+  font-size: 14px;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 15%;
+  margin-right: 20%;
+}
+.item-card {
+  border-style: groove;
+  padding: 20px;
+  margin: 10px;
+  height: 150px;
+  width: 145px;
+}
+.img-item {
+  margin-left: 16px;
+  margin-top: -34px;
+  width: 120px;
+  height: 108px;
+}
+.discount-tag {
+  background-color: #7aed66;
+  width: 40px;
+  height: 20px;
+  text-align: left;
+  padding-top: 4px;
+  margin-left: -20px;
+  font-size: 10px;
+}
+.item-detail {
+  position: relative;
+  background-color: #e6e1e1;
+  width: 185px;
+  margin-left: -20px;
+  margin-top: 20px;
+  height: 3.05rem;
+}
+.item-name {
+  margin-bottom: 5px;
+  padding-top: 3px;
+  text-align: left;
+}
+.add-item {
+  flex: 4;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 55%;
+  flex: 2;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+p {
+  margin: 0px;
+}
+
+.strike {
+  color: red;
+}
+.item-cart {
+  display: flex;
+}
+
+.item-price-details {
+  flex: 1;
+}
+.price-table {
+  margin-left: 20px;
+  width: 40%;
+}
+
+.order-total {
+  background-color: #d8d8d8;
+}
+.price-wrapper {
+  display: flex;
+}
+.add-button {
+  cursor: pointer;
+  border-color: rgb(0, 162, 255);
+  color: rgb(0, 162, 255);
+}
+.add-button:focus {
+  background-color: rgb(219, 215, 215);
+}
