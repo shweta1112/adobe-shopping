@@ -6,7 +6,10 @@
 .App-logo {
   height: 40vmin;
 }
-
+.body {
+  display: flex;
+  margin: 1rem 4rem;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,8 +27,11 @@
 .card-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 15%;
-  margin-right: 20%;
+  flex: 2;
+}
+.cart-detail {
+  flex: 1;
+  margin-top: 0.8%;
 }
 .item-card {
   border-style: groove;
@@ -68,17 +74,22 @@
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 55%;
+  width: 100%;
   flex: 2;
+  border-bottom: 1.8px solid #dddddd;
 }
 
-td,
 th {
-  border: 1px solid #dddddd;
+  border-top: 1.8px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
-
+td {
+  text-align: left;
+  padding: 8px;
+  border: none;
+}
 p {
   margin: 0px;
 }
@@ -87,19 +98,25 @@ p {
   color: red;
 }
 .item-cart {
-  display: flex;
+  flex-direction: column;
 }
 
 .item-price-details {
+  border: 1px solid #dddddd;
   flex: 1;
+  margin-top: 4%;
 }
 .price-table {
-  margin-left: 20px;
-  width: 40%;
+  width: 100%;
+  flex-direction: column;
+  text-align: left;
 }
 
 .order-total {
   background-color: #d8d8d8;
+  display: flex;
+  flex: 1;
+  padding: 3%;
 }
 .price-wrapper {
   display: flex;
@@ -111,4 +128,73 @@ p {
 }
 .add-button:focus {
   background-color: rgb(219, 215, 215);
+}
+.total-table-wrapper {
+  flex-direction: column;
+}
+.total {
+  padding: 3%;
+  font-weight: bold;
+}
+.total-items {
+  display: flex;
+  flex: 1;
+  padding: 3%;
+}
+.total-discount {
+  display: flex;
+  flex: 1;
+  padding: 3%;
+}
+.align {
+  flex: 1;
+}
+.align-price {
+  flex: 1;
+  text-align: center;
+}
+.align-last {
+  flex: 1;
+  text-align: right;
+}
+.img-item-icon {
+  width: 40px;
+  height: 40px;
+}
+.name-img-wrapper {
+  border: 1px solid #dddddd;
+  display: flex;
+}
+.item-name {
+  margin: 8px;
+}
+.add-remove-wrapper {
+  display: flex;
+  height: 2rem;
+  width: 4rem;
+}
+.quantity-div {
+  height: 79%;
+  border: 1px solid #dddddd;
+  width: 100%;
+  text-align: center;
+  padding-top: 11%;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+.remove-add {
+  cursor: pointer;
+  font-size: x-large;
+}
+.header-added-item {
+  background-color: #7aed66;
+  color: white;
+  width: 150px;
+  height: 30px;
+  border-radius: 3px;
+  padding-top: 10px;
+}
+.header-wrapper {
+  display: flex;
+  padding: 8px;
 }

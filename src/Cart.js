@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import { Link } from "react-router-dom";
 
 class Cart extends React.Component {
   state = {};
@@ -31,12 +30,9 @@ class Cart extends React.Component {
     console.log("itemMap:", itemMap);
     return (
       <div>
-        <Link to="/">Item List</Link>
-        <div>Order Summary</div>
         <div className="item-cart">
           <table>
             <tr>
-              <th></th>
               <th>Item({totalItems})</th>
               <th>Qty</th>
               <th>Price</th>
@@ -47,52 +43,69 @@ class Cart extends React.Component {
               const quantity = cartItems[itemId];
               return (
                 <tr key={itemId}>
-                  <td
-                    className="img-item"
-                    style={{
-                      width: 40,
-                      height: 40,
-                      backgroundImage: `url(${item.image})`,
-                    }}
-                  ></td>
-                  <td> {item.name}</td>
+                  <td>
+                    <div className="name-img-wrapper">
+                      <div>
+                        <img
+                          className="img-item-icon"
+                          src={item.image}
+                          alt="new"
+                        />
+                      </div>
+                      <div className="item-name"> {item.name}</div>
+                    </div>
+                  </td>
 
                   <td>
-                    <button onClick={() => removeFromCart(itemId)}>-</button>{" "}
-                    {quantity}
-                    <button onClick={() => addToCart(itemId)}>+</button>
+                    <div className="add-remove-wrapper">
+                      <div
+                        className="remove-add"
+                        onClick={() => removeFromCart(itemId)}
+                      >
+                        -
+                      </div>
+                      <div className="quantity-div">{quantity}</div>
+                      <div
+                        className="remove-add"
+                        onClick={() => addToCart(itemId)}
+                      >
+                        +
+                      </div>
+                    </div>
                   </td>
-                  <td>{item.price * quantity}</td>
+                  <td>{item.price.actual * quantity}</td>
                 </tr>
               );
             })}
           </table>
-          <aside className="item-price-details">
-            <table className="price-table">
-              <tr>
-                <th>Total</th>
-                <th></th>
-              </tr>
-              <tr>
-                <td>
-                  <label>Items({totalItems}):</label>
-                </td>
-                <td>{totalPrice}</td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Discount:</label>
-                </td>
-                <td>{totalDiscount}</td>
-              </tr>
-              <tr className="order-total">
-                <td>
-                  <label>Order Total: </label>
-                </td>
-                <td>{totalPrice - totalDiscount}</td>
-              </tr>
-            </table>
-          </aside>
+          <div className="item-price-details">
+            <div className="price-table">
+              <div className="total">Total</div>
+              <div className="total-table-wrapper">
+                <div className="total-items">
+                  <div className="align">
+                    <label>Items({totalItems})</label>
+                  </div>
+                  <div className="align-price">:</div>
+                  <div className="align-last">{totalPrice}</div>
+                </div>
+                <div className="total-discount">
+                  <div className="align">
+                    <label>Discount</label>
+                  </div>
+                  <div className="align-price">:</div>
+                  <div className="align-last">{totalDiscount}</div>
+                </div>
+                <div className="order-total">
+                  <div className="align">
+                    <label>Order Total</label>
+                  </div>
+                  <div className="align-price">:</div>
+                  <div className="align-last">{totalPrice - totalDiscount}</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
